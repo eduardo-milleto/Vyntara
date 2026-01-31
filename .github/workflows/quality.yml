@@ -47,7 +47,7 @@ jobs:
         with:
           args: >
             -Dsonar.projectKey=vyntara
-            -Dsonar.organization=yourusername
+            -Dsonar.organization=eduardo-milleto
             -Dsonar.sources=backend,frontend
 
   snyk:

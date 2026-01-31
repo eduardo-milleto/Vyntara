@@ -10,7 +10,7 @@ Este projeto adere a um Código de Conduta que esperamos que todos os contribuid
 
 ```bash
 # Fork e clone o repositório
-git clone https://github.com/yourusername/vyntara.git
+git clone https://github.com/eduardo-milleto/vyntara.git
 cd vyntara
 
 # Instale dependências
@@ -308,8 +308,8 @@ Outras abordagens?
 ## 📞 Obtenha Ajuda
 
 - **Documentação**: [README.md](README.md)
-- **Discussões**: [GitHub Discussions](https://github.com/yourusername/vyntara/discussions)
-- **Issues**: [GitHub Issues](https://github.com/yourusername/vyntara/issues)
+- **Discussões**: [GitHub Discussions](https://github.com/eduardo-milleto/vyntara/discussions)
+- **Issues**: [GitHub Issues](https://github.com/eduardo-milleto/vyntara/issues)
 
 ## 🙏 Agradecimentos
 

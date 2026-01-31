@@ -383,7 +383,7 @@ node --inspect app.js
 ## 📞 Suporte
 
 - **Status**: https://status.vyntara.com
-- **Issues**: https://github.com/yourusername/vyntara/issues
+- **Issues**: https://github.com/eduardo-milleto/vyntara/issues
 - **Slack**: #vyntara-incidents
 - **On-call**: PagerDuty
 
