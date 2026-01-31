@@ -1,0 +1,6 @@
+#!/bin/sh
+# Git Hooks - Husky
+
+. "$(dirname "$0")/_/husky.sh"
+
+npm run lint-staged

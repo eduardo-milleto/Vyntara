@@ -1,0 +1,41 @@
+{
+    "extends": [
+        "config:base"
+    ],
+    "extends": [
+        "group:allNonMajor"
+    ],
+    "extends": [
+        "schedule:weekly"
+    ],
+    "automerge": true,
+    "major": {
+        "enabled": false
+    },
+    "semanticCommits": true,
+    "commitMessagePrefix": "build(deps): ",
+    "dependencyDashboard": true,
+    "postUpdateOptions": [
+        "npm7",
+        "yarnDedupeHighest"
+    ],
+    "packageRules": [
+        {
+            "matchPackagePatterns": [
+                "^@types/"
+            ],
+            "automerge": true,
+            "minor": {
+                "automerge": true
+            }
+        },
+        {
+            "matchPackagePatterns": [
+                "eslint",
+                "prettier",
+                "jest"
+            ],
+            "automerge": true
+        }
+    ]
+}

@@ -1,0 +1,62 @@
+{
+    "name": "vyntara",
+    "version": "1.0.0",
+    "description": "Vyntara - Professional Investigation and Research Platform",
+    "private": true,
+    "license": "PROPRIETARY",
+    "author": "Vyntara Team",
+    "homepage": "https://github.com/eduardo-milleto/Vyntara",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/eduardo-milleto/Vyntara.git"
+    },
+    "bugs": {
+        "url": "https://github.com/eduardo-milleto/Vyntara/issues"
+    },
+    "engines": {
+        "node": ">=18.0.0",
+        "npm": ">=9.0.0"
+    },
+    "workspaces": [
+        "backend",
+        "frontend/vyntara",
+        "frontend/pagamento",
+        "frontend/meta"
+    ],
+    "scripts": {
+        "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend/vyntara && npm install --prefix frontend/pagamento && npm install --prefix frontend/meta",
+        "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend/vyntara\"",
+        "build:all": "npm run build --prefix backend && npm run build --prefix frontend/vyntara && npm run build --prefix frontend/pagamento && npm run build --prefix frontend/meta",
+        "test": "npm run test --workspaces --if-present",
+        "test:backend": "npm run test --prefix backend",
+        "test:frontend": "npm run test --prefix frontend/vyntara",
+        "lint": "npm run lint --workspaces --if-present",
+        "lint:fix": "npm run lint:fix --workspaces --if-present",
+        "format": "prettier --write \"**/*.{js,ts,tsx,jsx,json,md}\"",
+        "format:check": "prettier --check \"**/*.{js,ts,tsx,jsx,json,md}\"",
+        "type-check": "npm run type-check --workspaces --if-present",
+        "clean": "rm -rf node_modules backend/node_modules frontend/*/node_modules && npm install:all"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.2",
+        "prettier": "^3.1.1",
+        "husky": "^8.0.3",
+        "lint-staged": "^15.2.0"
+    },
+    "prettier": {
+        "semi": true,
+        "trailingComma": "es5",
+        "singleQuote": true,
+        "printWidth": 100,
+        "tabWidth": 2
+    },
+    "lint-staged": {
+        "*.{js,ts,tsx,jsx}": [
+            "prettier --write",
+            "eslint --fix"
+        ],
+        "*.{json,md}": [
+            "prettier --write"
+        ]
+    }
+}

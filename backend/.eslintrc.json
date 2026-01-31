@@ -1,0 +1,61 @@
+{
+    "extends": [
+        "eslint:recommended",
+        "plugin:node/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2022,
+        "sourceType": "module"
+    },
+    "env": {
+        "node": true,
+        "es2022": true,
+        "jest": true
+    },
+    "rules": {
+        "node/no-unpublished-require": "warn",
+        "node/no-unpublished-import": "warn",
+        "no-unused-vars": [
+            "error",
+            {
+                "argsIgnorePattern": "^_",
+                "varsIgnorePattern": "^_"
+            }
+        ],
+        "no-console": [
+            "warn",
+            {
+                "allow": [
+                    "warn",
+                    "error"
+                ]
+            }
+        ],
+        "eqeqeq": [
+            "error",
+            "always"
+        ],
+        "no-var": "error",
+        "prefer-const": "error",
+        "prefer-arrow-callback": "warn",
+        "no-param-reassign": [
+            "warn",
+            {
+                "props": false
+            }
+        ],
+        "prefer-template": "warn",
+        "object-shorthand": "warn"
+    },
+    "overrides": [
+        {
+            "files": [
+                "**/*.test.js",
+                "**/*.spec.js"
+            ],
+            "env": {
+                "jest": true
+            }
+        }
+    ]
+}

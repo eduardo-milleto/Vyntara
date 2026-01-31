@@ -1,0 +1,43 @@
+on:
+  push:
+    branches: [main, develop]
+
+name: 📝 Update Documentation
+
+jobs:
+  update-changelog:
+    name: Update CHANGELOG
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate changelog
+        uses: TriPSs/conventional-changelog-action@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          git-commit-message: 'docs: update CHANGELOG'
+          git-push: true
+
+  create-summary:
+    name: Create Release Summary
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate summary
+        run: |
+          echo "# Release ${{ github.ref }}" > RELEASE_SUMMARY.md
+          echo "" >> RELEASE_SUMMARY.md
+          git log --oneline -20 >> RELEASE_SUMMARY.md
+
+      - name: Upload summary
+        uses: actions/upload-artifact@v3
+        with:
+          name: release-summary
+          path: RELEASE_SUMMARY.md
